@@ -109,13 +109,26 @@ namespace CRUDInterface
 
         public void DeleteDoctor()
         {
+            int index=-1;
             int id = TakeDoctorIdFromUser();
             Doctor doctor = GetDoctorById(id);
-            if (doctor != null)
+            Doctor[] newDoctors = new Doctor[(doctors.Length - 1)];
+            for (int i = 0; i < doctors.Length; i++)
             {
-                doctor = null;
-                Console.WriteLine($"Doctor deleted...");
+                if (doctors[i].Id == doctor.Id)
+                    index = i;
+               
             }
+            for (int i = 0; i < index; i++)
+            {
+                newDoctors[i] = doctors[i];
+            }
+            for (int i = index; i < newDoctors.Length; i++)
+            {
+                newDoctors[i-1] = doctors[i];
+            }
+            doctors = newDoctors;
+
         }
         internal void SortDoctorsByExperiance()
         {
