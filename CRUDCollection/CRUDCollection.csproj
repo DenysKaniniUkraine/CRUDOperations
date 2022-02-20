@@ -6,7 +6,7 @@
   </PropertyGroup>
 
   <ItemGroup>
-    <ProjectReference Include="..\ModelsLibrary\CRUDInterface\CRUDInterface.csproj" />
+    <ProjectReference Include="..\ModelsLabrary\ModelsLabrary.csproj" />
   </ItemGroup>
 
 </Project>
